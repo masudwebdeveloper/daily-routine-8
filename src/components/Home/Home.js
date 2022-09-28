@@ -5,12 +5,16 @@ import './Home.css';
 
 const Home = () => {
    const [cards, setCards] = useState([]);
-   const []
+   const [times, setTimes] = useState([]);
    useEffect(() => {
       fetch("products.json")
          .then(res => res.json())
          .then(data => setCards(data))
    }, [])
+   const handleAddToTime = (card) => {
+      const oldCard = [...times,card];
+      setTimes(oldCard);
+   }
    return (
       <div>
          <div className='pl-5'>
@@ -20,11 +24,15 @@ const Home = () => {
          <div className='grid grid-cols-12 gap-5 px-5'>
             <div className="col-span-9 grid grid-cols-3 gap-4 p-2">
                {
-                  cards.map(card => <Card card={card} key={card.id}></Card>)
+                  cards.map(card => <Card
+                     card={card}
+                     key={card.id}
+                     handleAddToTime={handleAddToTime}
+                  ></Card>)
                }
             </div>
             <div className="col-span-3">
-               <SideCard></SideCard>
+               <SideCard times={times}></SideCard>
             </div>
          </div>
       </div>

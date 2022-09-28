@@ -1,10 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SideCard.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const SideCard = () => {
-
+const SideCard = ({ times }) => {
+   const [durations, setDurations] = useState([]);
+   const [breaks, setBreaks] = useState({});
+   useEffect(() => {
+      fetch('break.json')
+         .then(res => res.json())
+         .then(data => setDurations(data))
+   }, [])
+   let time = 0;
+   for (const card of times) {
+      const currentTime = parseInt(card.duration);
+      time += currentTime;
+   }
+   const handleBreak = (breakTimes) => {
+      const newBreak = [breakTimes];
+      setBreaks(newBreak);
+   }
+   console.log(breaks);
+   const toastHandle = () => {
+      toast("Activity Completed");
+   }
+   
    return (
       <div className='sticky top-0'>
+         <ToastContainer></ToastContainer>
          <div className='flex gap-4 bg-stone-200 rounded-md p-2 mb-10'>
             <div>
                img
@@ -29,12 +52,10 @@ const SideCard = () => {
             </div>
          </div>
          <h1 className='text-2xl font-bold text-slate-600 mb-5'>Add a Break</h1>
-         <div className='flex gap-4 bg-stone-200 rounded-md py-2 mb-10 px-5 justify-between'>
-            <button className='text-gray-500 bg-white rounded-full w-12 h-12'>10m</button>
-            <button className='text-gray-500 bg-white rounded-full w-12 h-12'>20m</button>
-            <button className='text-gray-500 bg-white rounded-full w-12 h-12'>30m</button>
-            <button className='text-gray-500 bg-white rounded-full w-12 h-12'>40m</button>
-            <button className='text-gray-500 bg-white rounded-full w-12 h-12'>50m</button>
+         <div className='flex gap-4 bg-stone-200 rounded-md py-2 mb-10 px-5 justify-between items-center'>
+            {
+               durations.map(timeDuration => <buttton onClick={()=> handleBreak(timeDuration)} className='text-gray-500 bg-white rounded-full w-12 h-12 text-center pt-3 cursor-pointer'>{timeDuration.duration}m</buttton>)
+            }
          </div>
          <h1 className='text-2xl font-bold text-slate-600 mb-5'>Daily Routine Details</h1>
          <div className='flex gap-4 bg-stone-200 rounded-md py-2 mb-7 pr-10 pl-5 justify-between'>
@@ -42,7 +63,7 @@ const SideCard = () => {
                <span className='text-gray-500 font-bold'>Daily work Time</span>
             </div>
             <div>
-               <span className='text-gray-500'>00</span>m
+               <span className='text-gray-500'>{time}</span>m
             </div>
          </div>
          <div className='flex gap-4 bg-stone-200 rounded-md py-2 mb-10 pr-10 pl-5 justify-between'>
@@ -50,10 +71,10 @@ const SideCard = () => {
                <span className='text-gray-500 font-bold'>Break Time</span>
             </div>
             <div>
-               <span className='text-gray-500'>00</span>m
+               <span className='text-gray-500'>{ }</span>m
             </div>
          </div>
-         <button className='text-center text-2xl w-[85%] px-auto py-2 bg-green-700 hover:bg-green-900 text-white m-4 rounded-md'>Activity Completed</button>
+         <button onClick={toastHandle} className='text-center text-2xl w-[85%] px-auto py-2 bg-green-700 hover:bg-green-900 text-white m-4 rounded-md'>Activity Completed</button>
       </div>
    );
 };

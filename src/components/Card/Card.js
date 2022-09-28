@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Card = ({ card }) => {
+const Card = ({ card, handleAddToTime }) => {
+
    const { id, name, img, description, duration, age } = card;
    return (
       <div className='p-3 bg-stone-200 rounded-md text-center'>
@@ -9,7 +10,7 @@ const Card = ({ card }) => {
          <p className='text-sm'>{description}</p>
          <p className='font-semibold mb-2'>Age: {age}</p>
          <p className='font-semibold'>Duration: {duration}m</p>
-         <button className='text-center text-2xl w-[60%] px-auto my-4 py-2 bg-green-700 hover:bg-green-900 text-white rounded-md'>Add to Select</button>
+         <button onClick={()=>handleAddToTime(card)} className='text-center text-2xl w-[60%] px-auto my-4 py-2 bg-green-700 hover:bg-green-900 text-white rounded-md'>Add to Select</button>
       </div>
    );
 };

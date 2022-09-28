@@ -4,6 +4,47 @@
       "name": "typing",
       "img": "female-hand-typing-keyboard-laptop_1150-15742.jpg?w=826&t=st=1664376345~exp=1664376945~hmac=cd9289a59a9d4a85a52764d21273e0b592a5c4680c995ace35e12f0b5515170e",
       "age": "23",
+      "description": "Received a suspicious text message that appears to have been sent from your phone number?",
       "duration": "15"
+   },
+   {
+      "id": 2,
+      "name": "Reading Book",
+      "img": "https://img.freepik.com/premium-photo/man-home-with-glasses-reading-book_23-2148306564.jpg?w=826",
+      "age": "23",
+      "description": "Received a suspicious text message that appears to have been sent from your phone number?",
+      "duration": "30"
+   },
+   {
+      "id": 3,
+      "name": "Computer Class",
+      "img": "https://img.freepik.com/free-photo/extremely-focused-male-student-taking-online-test_74855-1859.jpg?w=826&t=st=1664377091~exp=1664377691~hmac=a9eb8df05ceb48f51d4a113076fd5fb9b397eccef8e929abdd0a9a2b4b7608a4",
+      "age": "23",
+      "description": "Received a suspicious text message that appears to have been sent from your phone number?",
+      "duration": "120"
+   },
+   {
+      "id": 4,
+      "name": "Coding Practice",
+      "img": "https://img.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg?w=826&t=st=1664377156~exp=1664377756~hmac=3714a7821d1c28a45fee1f793fe528cc9da9b5bfa07429e03ddc0457f863c28c",
+      "age": "23",
+      "description": "Received a suspicious text message that appears to have been sent from your phone number?",
+      "duration": "180"
+   },
+   {
+      "id": 5,
+      "name": "Exarcise",
+      "img": "https://img.freepik.com/premium-photo/muscular-tattooed-bearded-male-exercising_136403-9395.jpg?w=826",
+      "age": "23",
+      "description": "Received a suspicious text message that appears to have been sent from your phone number?",
+      "duration": "15"
+   },
+   {
+      "id": 6,
+      "name": "sleep",
+      "img": "https://img.freepik.com/free-photo/man-sleeping-comfortable-bed_329181-13878.jpg?w=826&t=st=1664377299~exp=1664377899~hmac=bcfec1aba64858e88d7c7b8078f86af51f2f44e22d1a35515718598465ae1394",
+      "age": "23",
+      "description": "Received a suspicious text message that appears to have been sent from your phone number?",
+      "duration": "360"
    }
 ]

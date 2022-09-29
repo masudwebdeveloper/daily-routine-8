@@ -7,7 +7,7 @@ function App() {
     <div>
       <Home></Home>
       <div className='my-10'>
-        <h1>Answare and Questions</h1>
+        <h1 className='ml-7 text-3xl font-bold mb-5'>Answare and Questions</h1>
         <Blog></Blog>
       </div>
 

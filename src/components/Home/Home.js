@@ -20,9 +20,9 @@ const Home = () => {
    }
    return (
       <div>
-         <div className='pl-5'>
-            <h1 className="text-4xl text-green-500 font-bold">Daily Routine</h1>
-            <h2 className="text-3xl text-green-400 font-semibold">Selected daily works</h2>
+         <div className='pl-7 text-center lg:text-left bg-stone-200 mb-5 py-4'>
+            <h1 className="text-4xl text-gray-600 font-bold">Daily Routine</h1>
+            <h2 className="text-3xl text-gray-500 font-semibold">Selected daily works</h2>
          </div>
          <div className='grid grid-cols-6 lg:grid-cols-12 gap-5 px-5'>
             <div className="col-span-12 lg:col-span-9 grid grid-cols-1 lg:grid-cols-3 gap-4 p-2">

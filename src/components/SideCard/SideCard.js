@@ -12,22 +12,24 @@ const SideCard = ({ times }) => {
          .then(res => res.json())
          .then(data => setDurations(data))
    }, [])
+
+   useEffect(() => {
+      const getBreakTime = localStorage.getItem('breaktime');
+      if (getBreakTime) {
+         setBreaksTime(getBreakTime);
+      }
+   },[])
    let time = 0;
    for (const card of times) {
       const currentTime = parseInt(card.duration);
       time += currentTime;
    }
    const handleBreak = (breakTimeCard) => {
-      let demo = 0;
-      const getBreakTime = localStorage.getItem('breaktime');
-      if (getBreakTime) {
-         demo = getBreakTime;
-         setBreaksTime(demo);
-      }
-         const newBreakTime = breakTimeCard.duration;
-         setBreaksTime(newBreakTime);
-         localStorage.setItem('breaktime', newBreakTime);
-
+      // let demo = 0;
+      const newBreakTime = breakTimeCard.duration;
+      localStorage.setItem('breaktime', newBreakTime);
+      setBreaksTime(newBreakTime);
+      
    }
 
    const toastHandle = () => {
